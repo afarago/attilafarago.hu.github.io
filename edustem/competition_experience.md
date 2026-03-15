@@ -14,7 +14,7 @@ Meeting and working with awesome people all over the world as a coach, volunteer
 
 | Year | Type | Activity |
 | - | - | - |
-| 2014-2026 | coach | Team Coach @ private team [TövisCsapat](http://toviscsapat.hu)<br/>*<small>World Festival 2019 · Detroit Champion finalist trophy</small>*<br/>*<small>World Festival 2017 · St.Louis Mechanical Robot Design runner up trophy</small>* |
+| 2014-2026 | coach | Team Coach @ private team [TövisCsapat](http://toviscsapat.hu)<small><br/>*World Festival 2017 · St.Louis · Mechanical Robot Design runner up trophy*<br/>*World Festival 2019 · Detroit · Champion finalist (TövisCsapat 44350)*<br/>*Coach of the Year 2026 · Lifetime Achievement Award · FLL Hungary*</small> |
 | 2024-2026 | co-coach | Co-Team Coach @ community team Jász-Stones<br/><small>Jászberény, national 3rd place 2025, national 3rd place 2026 </small> 
 | 2023-2026 | WRO   | Member of ECE Head Judge Network, Edutus University <small>(WRO, EduCup)<small> |
 | ___   | ___ | ___ | 
