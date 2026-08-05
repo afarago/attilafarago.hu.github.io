@@ -50,7 +50,6 @@ group :jekyll_plugins do
   gem "webrick"
   gem "github-pages"
   gem "faraday-retry"
-  gem "just-the-docs"
   # gem 'jekyll-spaceship'
   # gem 'jekyll-embed-video'
   # gem 'jekyll-gallery-generator'
