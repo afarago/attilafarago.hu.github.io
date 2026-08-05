@@ -9,110 +9,102 @@ tags:
   - Strategy
   - Simulation
   - Pybricks
+  - AI & Machine Learning
 ---
 
-# RoboVibe - Strategy and Mission Planning
+# RoboVibe - Strategy and Mission Planning Platform
 
-RoboVibe is an interactive, visual path-planning and strategy platform for mobile robots. It combines precise field mapping, physics-based simulation, and comprehensive mission management to help teams, educators, and hobbyists design reliable robot runs.
+RoboVibe is an interactive, visual path-planning, physics-based simulation, and strategy platform designed for mobile robots. It combines precise field mapping, physics-based simulation, and comprehensive mission management to help teams, educators, and hobbyists design reliable robot runs (specifically tailored for competitive robotics like FIRST LEGO League and World Robot Olympiad).
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/PO5JEWvFGsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ![RoboVibe](assets/robovibe.jpg)
 
-## Interactive Mission Planning
+## Why RoboVibe Exists
 
-Designing reliable robot missions requires more than just drawing a line. It demands accurate geometry, an understanding of physics, and strategic scoring. RoboVibe addresses critical challenges in competitive robotics:
+Designing reliable robot missions requires more than just drawing a line. It demands accurate geometry, an understanding of physics, and strategic scoring:
 
 - **Precision**: Design on a 1:1 scale field map where every millimeter counts.
-- **Physics Intuition**: Visualize wheel slip, friction, and dynamic errors _before_ you run the robot.
+- **Physics Intuition**: Visualize wheel slip, friction, and dynamic errors *before* you run the robot on physical tables.
 - **Strategy & Scoring**: Manage mission objectives, track scores, and optimize your run for maximum points.
 - **Reproducibility**: Export clean, kinematic-aware code (Python/Pybricks) ready for your robot.
 
-## Core Pillars
+---
 
-### 🗺️ Interactive Map Canvas
+## Key Modules & Detailed Features
 
-Precise, vector-based path editing with smart snapping and arc tools. Switch between 2D planning and 3D visualization. Easily convert straight lines to smooth curves with adjustable handles.
+### 🗺️ Interactive Map Planner (`/`)
 
-### ⚛️ Physics & Simulation
+- **2D & 3D Vector Canvas**: Switch between precise 2D field planning and 3D visualization.
+- **Smart Editing & Arcs**: Drag-and-drop waypoints with magnetic grid/angle snapping; convert straight segments to smooth Bezier curves or radius arcs.
+- **Physics Simulation**: Real-time wheel slip probability overlays, centrifugal force warnings, acceleration limits, and dynamic friction analysis.
+- **Code Generation**: Instant export to structured kinematic-aware Python code (Pybricks, SPIKE Prime, EV3).
+- **Multi-Layer Overlays**: Toggle path layers, robot footprints, measurement dimension lines, and playback controls.
 
-Simulation of wheel slip, centrifugal forces, and robot dynamics. Real-time feedback on acceleration limits and friction coefficients helps catch geometry and physics errors in simulation, saving battery and table time.
+### ⚡ Visual Flow Engine (`/flow`)
 
-### 🏆 Mission & Strategy
+- **Reactive Node Canvas**: Node-based visual programming environment for telemetry processing, filtering, and hub control.
+- **Rich Node Library**: Built-in nodes for BLE sensors, transforms, motor/drivebase outputs, speech, sound, manual inputs, and custom Python execution.
+- **Group & Subflow Support**: Group nodes into simple containers or sealed subflows (`G` shortcut) with dedicated subflow tab views.
+- **Alignment & Equal-Gap Distribution**: Align selected nodes (Top, Middle, Bottom, Left, Center, Right) or distribute with equal spacing horizontally/vertically via context menus.
+- **Group-Aware Clipboard**: Full Cut (`Cmd/Ctrl+X`), Copy (`Cmd/Ctrl+C`), and Paste (`Cmd/Ctrl+V`) support with top-level selection filtering and visual copy checkmark badges.
 
-Integrated scoring, mission badges, and strategy visualization. Define and track mission objectives with automatic score calculation. Presentation mode simplifies team reviews.
+### 🧠 AI & Machine Learning Lab (`/ai`)
 
-### ☁️ Cloud & Collaboration
+- **Teachable Machine Integration**: Import and run custom image, pose, and audio classification models directly in the browser.
+- **Real-Time Vision & Audio**: MediaPipe pose detection, holistic face/hand tracking (mouth, eyebrow aperture), and YAMNet audio classification.
+- **Flow Pipeline Bridging**: Stream real-time AI inference metrics and class probabilities directly into Flow node graphs.
 
-Real-time synchronization of projects and programs using Firebase. Design on a tablet, refine on a laptop. Your whole team stays on the same page.
+### 🏆 Strategy & Score Planner (`/score`)
 
-### ⌨️ Productivity & Export
+- **Interactive Score Manager**: Define and track competition mission objectives with automatic score tallying.
+- **Exclusive Scoring Rules**: Support for mutual exclusivity rules, shared mission pools, and tier caps.
+- **Presentation Modes**: "Winged" and "Standard" presentation views for team strategy reviews and judge presentations.
 
-Instant export to structured command sequences compatible with Pybricks, SPIKE, and more. Use keyboard shortcuts (Arrow keys, WASD) and playback panels to verify logic step-by-step.
+### ⏱️ Match Timer (`/timer`)
+
+- **Competition Match Timer**: Official match countdown timer with customizable sound presets and start/stop controls.
+- **Synced Timer Sharing**: Real-time peer-to-peer match state synchronization across multiple devices via session IDs.
+
+### 📜 Rules Quiz (`/quiz`)
+
+- **Interactive Rules Quiz**: Self-assessment and practice engine for team members and judges.
+- **Category Filtering & Explanations**: Filter questions by topic and receive instant rule explanation feedback.
+
+### 🌉 GitHub & Gist Bridge (`/bridge`)
+
+- **Repository & Gist Import**: Import and parse Python robot scripts directly from GitHub repositories, branches, or Gists.
+- **OAuth Sync**: Supabase-powered GitHub OAuth integration for accessing private repositories and gists.
+
+### 📡 Coral & BLE Remote (`/coral`)
+
+- **Direct Hub Control**: Remote control interface supporting Pybricks BLE/USB, HubOS LWP framing, and Coral BLE devices.
+- **Gamepad Integration**: Haptic pattern design and gamepad button mappings for remote driving.
+
+### ⚙️ Field & Robot Config Editor (`/config-editor`)
+
+- **Field Map & Mission Editor**: Visual editor for custom field map dimensions, mission target coordinates, and scoring rules.
+- **Robot Profile Designer**: Customize robot dimensions, wheel track, speed profiles, and 3D GLB model previews.
+
+### 🎮 Educational Mini-Games (`/games`)
+
+- **Physics Games**: Interactive educational mini-games (such as Robot Jumper) for practicing timing and momentum physics.
 
 ---
 
-## Detailed Features
+## ☁️ Cloud & Productivity Features
 
-### Mission Planning & Editing
-
-- **Projects & Programs**: Organize, save, and load custom missions.
-- **Add Waypoint**: Drop target coordinate pins across the field map.
-- **Draw Path**: Freehand sketching tool processed into traversable waypoints.
-- **Measure Tool**: Calculate distance and angle between distinct points.
-
-### Strategy & Analytics
-
-- **AI Path Planner**: Leverage AI to calculate the most efficient travel path.
-- **Scoring View**: Monitor exact score and objectives in real-time.
-- **Score Density**: Heat-map visualization pinpointing lucrative target areas.
-- **Analytics & Reports**: Metrics about path complexity, expected runtime, and efficiency.
-
-### Visualization & Simulation
-
-- **3D Simulate**: Evaluate 2D plans in a fully interactive 3D environment.
-- **AR Verifier**: Project mapped digital waypoints onto the real-world playing field using Augmented Reality.
-- **Presentation Mode**: Distraction-free layout tailored for clear visual communication.
+- **Auto-Sync & Collaboration**: Changes are saved locally and synced to the cloud (Supabase) when online across tablets and laptops.
+- **Keyboard Shortcuts**: Efficient navigation (Arrow keys, WASD) and editing (`Cmd/Ctrl+X` cut, `Cmd/Ctrl+C` copy, `Cmd/Ctrl+V` paste, `Cmd/Ctrl+Z` undo, `Delete`/`Backspace`).
+- **Context Menus**: Right-click context menus for quick access to mission toggles, segment types, node alignment, group management, and canvas imports.
 
 ---
 
-## Technical Stack
+## Links & Community
 
-- **Frontend**: React 18, TypeScript, Vite
-- **Styling**: Tailwind CSS
-- **Backend**: Firebase (Cloud Sync)
-- **Rendering**: SVG for path rendering, 3D experimental engine for glTF models
-- **Integration**: Pybricks Python bindings
+- **Live Application**: [robovibe.afarago.hu](https://robovibe.afarago.hu/)
+- **Community Repository**: [afarago/robovibe-community on GitHub](https://github.com/afarago/robovibe-community){: .btn .btn-primary }
 
----
 
-## Usage & Controls
 
-### Basic Path Creation
 
-1. **Add waypoints**: Click on the map to add points
-2. **Move waypoints**: Drag the white circular handles
-3. **Create curves**: Drag the white handle at the segment midpoint
-4. **Adjust heading**: Select the last waypoint and use Left/Right arrows
-5. **Delete waypoints**: Select and press Delete/Backspace
-
-### Keyboard Shortcuts
-
-| Key                     | Action                         |
-| ----------------------- | ------------------------------ |
-| `Click`                 | Add waypoint                   |
-| `Drag`                  | Move waypoint                  |
-| `Double-click waypoint` | Remove waypoint                |
-| `Left/Right Arrow`      | Rotate last waypoint ±15°      |
-| `Up/Down Arrow`         | Extend path from last waypoint |
-| `Delete/Backspace`      | Remove selected waypoint       |
-| `Ctrl/Cmd + Z`          | Undo                           |
-| `Shift + Drag`          | Bypass angle snapping          |
-
----
-
-## Get Started
-
-The community version of RoboVibe is available on GitHub. You can explore the code, contribute, or set up your own instance.
-
-[RoboVibe Community on GitHub](https://github.com/afarago/robovibe-community){: .btn .btn-primary }
